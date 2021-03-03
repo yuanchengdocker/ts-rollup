@@ -7,7 +7,6 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      name: 'dhtAjax',
       file: 'lib/bundle.umd.js',
       format: 'umd'
     },
