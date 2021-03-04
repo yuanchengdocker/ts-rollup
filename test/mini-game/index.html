@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迷你游戏 JSbridge Demo 测试页</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vconsole@3.4.0/dist/vconsole.min.js"></script>
+</head>
+<body>
+    <ul class="demo" id="demo">
+        <h3>基础接口</h3>
+        <li>
+            <p class="desc">检测user agent</p>
+            <p><button type="button" class="btn" id="getUserAgent">获取User Agent</button></p>
+        </li>
+        <h3>分享接口</h3>
+        <li>
+            <p class="desc">打开原生的分享弹层</p>
+            <p><button type="button" class="btn" id="openShare">打开分享</button></p>
+        </li>
+        <li>
+            <p class="desc">直接分享到QQ</p>
+            <p><button type="button" class="btn" id="shareToQQ">分享到QQ</button></p>
+        </li>
+        <li>
+            <p class="desc">直接分享到微信好友</p>
+            <p><button type="button" class="btn" id="shareToWechat">分享到微信</button></p>
+        </li>
+        <li>
+            <p class="desc">直接分享到微博</p>
+            <p><button type="button" class="btn" id="shareToWeibo">分享到微博</button></p>
+        </li>
+        <li>
+            <p class="desc">直接分享到朋友圈</p>
+            <p><button type="button" class="btn" id="shareToTimeline">分享到朋友圈</button></p>
+        </li>
+        <li>
+            <p class="desc">直接分享到QQ空间</p>
+            <p><button type="button" class="btn" id="shareToQZone">分享到QQ空间</button></p>
+        </li>
+        <li>
+            <p class="desc">直接分享到Facebook</p>
+            <p><button type="button" class="btn" id="shareToFacebook">分享到Facebook</button></p>
+        </li>
+        <li>
+            <p class="desc">直接分享到Twitter</p>
+            <p><button type="button" class="btn" id="shareToTwitter">分享到Twitter</button></p>
+        </li>
+        <li>
+            <p class="desc">获取网络状态</p>
+            <p><button type="button" class="btn" id="getNetworkType">获取网络状态</button></p>
+        </li>
+        <li>
+            <p class="desc">判断是否安装迷你盒子（仅安卓）</p>
+            <p><button type="button" class="btn" id="checkMiniboxInstallStatus">判断是否安装迷你盒子</button></p>
+        </li>
+        <li>
+            <p class="desc">打开迷你盒子（安卓下当安装了会直接打开，iOS下打开了会返回true，没打开会返回false）</p>
+            <p><button type="button" class="btn" id="openMinibox">打开迷你盒子</button></p>
+        </li>
+        <li>
+            <p class="desc">直接关闭浏览器窗口</p>
+            <p><button type="button" class="btn" id="closeWindow">关闭浏览器窗口</button></p>
+        </li>
+        <li>
+            <p class="desc">刷新当前页面</p>
+            <p><button type="button" class="btn" id="reloadPage">刷新页面</button></p>
+        </li>
+        <li>
+            <p class="desc">隐藏所有工具栏</p>
+            <p><button type="button" class="btn" id="hideBar">隐藏所有工具栏</button></p>
+        </li>
+        <li>
+            <p class="desc">隐藏标题栏</p>
+            <p><button type="button" class="btn" id="hideTopBar">隐藏标题栏</button></p>
+        </li>
+        <li>
+            <p class="desc">隐藏下工具栏</p>
+            <p><button type="button" class="btn" id="hideBottomBar">隐藏下工具栏</button></p>
+        </li>
+        <li>
+            <p class="desc">显示所有工具栏</p>
+            <p><button type="button" class="btn" id="showBar">显示所有工具栏</button></p>
+        </li>
+        <li>
+            <p class="desc">显示标题栏</p>
+            <p><button type="button" class="btn" id="showTopBar">显示标题栏</button></p>
+        </li>
+        <li>
+            <p class="desc">显示下工具栏</p>
+            <p><button type="button" class="btn" id="showBottomBar">显示下工具栏</button></p>
+        </li>
+        <li>
+            <p class="desc">下载图片到相册</p>
+            <p><button type="button" class="btn" id="downloadImage">下载图片到相册</button></p>
+        </li>
+        <li>
+            <p class="desc">判断是否可以播放广告，此接口只在移动端openBrowser=3的窗口浏览器中有效</p>
+            <p><button type="button" class="btn" id="hasAD">是否有广告</button></p>
+        </li>
+        <li>
+            <p class="desc">调起广告，此接口只在移动端openBrowser=3的窗口浏览器中有效</p>
+            <p><button type="button" class="btn" id="openAD">调起广告</button></p>
+        </li>
+        <li>
+            <p class="desc">测试菜单栏分享</p>
+            <p><a class="btn" href="./blank.html">测试菜单栏分享</a></p>
+        </li>
+        <li>
+            <p class="desc">测试隐藏分享按钮</p>
+            <p><button type="button" class="btn" id="hideShareBtn">隐藏分享按钮</button></p>
+        </li>
+        <li>
+            <p class="desc">测试显示分享按钮</p>
+            <p><button type="button" class="btn" id="showShareBtn">显示分享按钮</button></p>
+        </li>
+        <li>
+            <p class="desc">测试直接下载迷你盒子（仅安卓）</p>
+            <p><a class="btn" href="https://helper.miniworldbox.com/index/apk/android">直接下载迷你盒子</a></p>
+        </li>
+        <li>
+            <p class="desc">判断是否能打开盒子，否就调起下载链接（仅安卓）</p>
+            <p><button type="button" class="btn" id="checkOrOpenDownload">判断打开盒子，否就调起下载链接</button></p>
+        </li>
+        <li>
+            <p class="desc">打开充值界面，此接口只在移动端openBrowser=3的窗口浏览器中有效</p>
+            <p><button type="button" class="btn" id="openChargeStore">打开充值界面</button></p>
+        </li>
+        <li>   
+            <p class="desc">带类型分享</p>
+            <p><button type="button" class="btn" id="shareType1">分享【图片+链接】</button></p>         
+        </li>
+        <li>
+            <p><button type="button" class="btn"  id="shareType2">分享【图片】</button></p>
+        </li>
+        <li>
+            <p><button type="button" class="btn"  id="shareType3">分享【链接】</button></p>   
+        </li>
+        <li>
+            <p class="desc">打开地图详情页面，此接口只在移动端openBrowser=3的窗口浏览器中有效</p>
+            <p><button type="button" class="btn" id="openMapDetail">打开地图详情页面</button></p>
+        </li>
+        <li>
+            <p class="desc">获取游戏登录态</p>
+            <p><button type="button" class="btn" id="getUserAuth">获取游戏登录态</button></p>
+        </li>
+        <li>
+            <p class="desc">打开房间，此接口只在移动端openBrowser=3的窗口浏览器中有效</p>
+            <p><button type="button" class="btn" id="openRoom">打开房间</button></p>
+        </li>
+        <li>
+            <p class="desc">打开专题，此接口只在移动端openBrowser=3的窗口浏览器中有效</p>
+            <p><button type="button" class="btn" id="openTheme">打开专题</button></p>
+        </li>
+        <li>
+            <div><a href="https://itunes.apple.com/cn/app/%E8%BF%B7%E4%BD%A0%E7%9B%92%E5%AD%90/id1363389095?mt=8">测试打开AppStore网页</a></div>
+        </li>
+    </ul>
+</body>
+<script>
+    var vConsole = new VConsole();
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC-JS-Bridge  测试</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vconsole@3.4.0/dist/vconsole.min.js"></script>
+</head>
+<body>
+    <ul class="demo" id="demo">
+        <li>
+            <p class="desc">获取登录态</p>
+            <p><button type="button" class="btn" id="getAuthInfo">获取登录态</button></p>
+        </li>
+        <li>
+            <p class="desc">打开地图详情页</p>
+            <p><button type="button" class="btn" id="openMapAction">打开地图详情页</button></p>
+        </li>
+        <li>
+            <p class="desc">打开房间</p>
+            <p><button type="button" class="btn" id="openRoom">打开游戏房间</button></p>
+        </li>
+        <li>
+            <p class="desc">绑定QQ号</p>
+            <p><button type="button" class="btn" id="qqLoginBind">绑定QQ号</button></p>
+        </li>
+        <li>
+            <p class="desc">绑定微信</p>
+            <p><button type="button" class="btn" id="wechatLoginBind">绑定微信</button></p>
+        </li>
+    </ul>
+</body>
+<script>
+    var vConsole = new VConsole();
+</script>
+</html>
