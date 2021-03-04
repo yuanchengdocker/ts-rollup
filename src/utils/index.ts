@@ -23,5 +23,14 @@ export default {
     setTimeout(function () {
       document.documentElement.removeChild(WVJBIframe)
     }, 0)
+  },
+  setReadyWebViewJavascriptBridge(callback: any): void {
+    document.addEventListener(
+      'WebViewJavascriptBridgeReady',
+      () => {
+        callback(window.WebViewJavascriptBridge)
+      },
+      false
+    )
   }
 }

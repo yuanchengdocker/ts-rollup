@@ -32,7 +32,6 @@ module.exports = {
     'no-console': 0,
     'no-undef': 0,
     'no-unused-vars': 0,
-    camelcase: 0,
     'no-nested-ternary': 0,
     'no-underscore-dangle': 0,
     'no-plusplus': 0,
@@ -42,7 +41,6 @@ module.exports = {
     'vars-on-top': 0, // 加no-var
     'default-case': 0,
     'consistent-return': 0,
-    complexity: 0, // complexity: ['warn', 10],
     'vue/no-unused-vars': 0,
     'vue/require-prop-type-constructor': 0,
     'vue/valid-v-model': 'off',

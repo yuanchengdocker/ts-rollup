@@ -7,5 +7,6 @@ declare global {
     WVJBCallbacks: any
     JSUserInfoInterface: any
     shareCallback: any
+    GetUrlAddAuthStr: any
   }
 }
