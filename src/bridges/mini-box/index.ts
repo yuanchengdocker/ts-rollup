@@ -44,12 +44,16 @@ export default class MiniBox extends BgCommon implements Bridge {
         window.shareCallback = callback
         handler[method](options.title, options.content, options.imgUrl, options.shareUrl, options.sharePlatform)
       } else {
-        if (method === 'getUserAuthInfo') {
-          const userInfo = JSON.parse(handler.getUserAuthInfo())
-          callback(userInfo)
-          return
+        try {
+          if (method === 'getUserAuthInfo') {
+            const userInfo = JSON.parse(handler.getUserAuthInfo())
+            callback(userInfo)
+            return
+          }
+          handler[method](JSON.stringify(options))
+        } catch (error) {
+          console.log(error)
         }
-        handler[method](JSON.stringify(options))
       }
     }
   }

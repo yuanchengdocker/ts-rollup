@@ -22,15 +22,20 @@ export default class MiniGame extends BgCommon implements Bridge {
 
   private initBridge() {
     return (method: string, callback: any, options: any, initCallbackName?: string) => {
-      if (method == 'GetUrlAddAuthStr') {
-        const obj = typeof window[method]() === 'string' ? JSON.parse(window[method]()) : window[method]()
-        callback(obj)
-        return
+      try {
+        if (method == 'GetUrlAddAuthStr') {
+          const result = window[method]()
+          const obj = typeof result === 'string' ? JSON.parse(result) : result
+          callback(obj)
+          return
+        }
+        if (initCallbackName) {
+          (window as any)[initCallbackName] = function (result: any) { callback(result) }
+        }
+        (window as any)[method](JSON.stringify(options))
+      } catch (error) {
+        console.log(error)
       }
-      if (initCallbackName) {
-        (window as any)[initCallbackName] = function (result: any) { callback(result) }
-      }
-      (window as any)[method](JSON.stringify(options))
     }
   }
 }

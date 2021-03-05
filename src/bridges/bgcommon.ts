@@ -1,3 +1,5 @@
+import utils from '../utils'
+
 type callbackObj = {
   fnKey: string
   args: any
@@ -6,12 +8,12 @@ type callbackObj = {
 export default class BgCommon {
   public apis: any = { hasInit: false }
 
-  private optionConfigs = []
+  private optionConfigs = {}
 
   private readyCallbacks: callbackObj[] = []
 
   constructor(optionConfigs: any) {
-    this.optionConfigs = optionConfigs
+    this.optionConfigs = optionConfigs || {}
   }
 
   protected noReadyCallback(): void {
@@ -31,10 +33,17 @@ export default class BgCommon {
       // 初始化完成
       this.apis.hasInit = true
       // option:外部调用方法名 apis 来对接外部调用函数执行
-      this.apis[option] = (callback: any, options = {}) => {
+      this.apis[option] = (...args: any[]) => {
+        let callback = null
+        let options = {}
+        args.forEach(arg => {
+          if (utils.isFunction(arg)) callback = arg
+          if (utils.isObject(arg)) options = arg
+        })
         const optionObj = (this.optionConfigs as any)[option]
         const method = optionObj.method
         const defaultOption = optionObj.option
+        // mini-pc-game 特有的callback回调函数名
         const callbackName = optionObj.callback
         options = Object.assign({}, defaultOption, options)
         // method ：app对接名, defaultOption: config配置option参数

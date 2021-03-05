@@ -56,23 +56,27 @@ export default class MiniGame extends BgCommon implements Bridge {
         } else if (method === 'showAdvertisement') {
           this.apis.playAdCallback = callback
         }
-        const result = handler[method](JSON.stringify(options))
-        if (method === 'GetUrlAddAuthStr') {
-          callback(JSON.parse(result))
-          return
+        try {
+          const result = handler[method](JSON.stringify(options))
+          if (method === 'GetUrlAddAuthStr') {
+            callback(JSON.parse(result))
+            return
+          }
+          const _methods = [
+            'getNetworkType',
+            'downloadBitmap',
+            'hideBar',
+            'showBar',
+            'isMiniBoxInstalled',
+            'openMiniBox',
+            'advertisementCanShow',
+            'openChargeStore',
+            'openMapDetail'
+          ]
+          if (_methods.includes(method) && callback) callback(result)
+        } catch (error) {
+          console.log(error)
         }
-        const _methods = [
-          'getNetworkType',
-          'downloadBitmap',
-          'hideBar',
-          'showBar',
-          'isMiniBoxInstalled',
-          'openMiniBox',
-          'advertisementCanShow',
-          'openChargeStore',
-          'openMapDetail'
-        ]
-        if (_methods.includes(method)) callback(result)
       }
     }
   }

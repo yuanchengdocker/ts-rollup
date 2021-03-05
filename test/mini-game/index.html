@@ -5,6 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>迷你游戏 JSbridge Demo 测试页</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        if(!window.WebViewJavascriptBridge ) {
+            window.WebViewJavascriptBridge = {
+                startWebViewShare() {
+                    console.log("startWebViewShare", Array.prototype.slice.call(arguments, 0));
+                    return 'startWebViewShare 回调'
+                },
+                reload() {
+                    console.log("reload",Array.prototype.slice.call(arguments, 0));
+                    return 'reload 回调'
+                },
+                showAdvertisement() {
+                    console.log("showAdvertisement",Array.prototype.slice.call(arguments, 0));
+                    return 'showAdvertisement 回调'
+                },
+                stop() {
+                    console.log("stop",Array.prototype.slice.call(arguments, 0));
+                    return 'stop 回调'
+                },
+                showBar() {
+                    console.log("showBar",Array.prototype.slice.call(arguments, 0));
+                    return 'showBar 回调'
+                },
+                hideBar() {
+                    console.log("hideBar",Array.prototype.slice.call(arguments, 0));
+                    return 'hideBar 回调'
+                },
+                showShareBtn() {
+                    console.log("showShareBtn",Array.prototype.slice.call(arguments, 0));
+                    return 'showShareBtn 回调'
+                },
+                hideShareBtn() {
+                    console.log("hideShareBtn",Array.prototype.slice.call(arguments, 0));
+                    return 'hideShareBtn 回调'
+                },
+                getNetworkType() {
+                    console.log("getNetworkType",Array.prototype.slice.call(arguments, 0));
+                    return 'getNetworkType 回调'
+                },
+                isMiniBoxInstalled() {
+                    console.log("isMiniBoxInstalled",Array.prototype.slice.call(arguments, 0));
+                    return 'isMiniBoxInstalled 回调'
+                },
+                openMiniBox() {
+                    console.log("openMiniBox",Array.prototype.slice.call(arguments, 0));
+                    return 'openMiniBox 回调'
+                },
+                downloadBitmap() {
+                    console.log("downloadBitmap",Array.prototype.slice.call(arguments, 0));
+                    return 'downloadBitmap 回调'
+                },
+                advertisementCanShow() {
+                    console.log("advertisementCanShow",Array.prototype.slice.call(arguments, 0));
+                    return 'advertisementCanShow 回调'
+                },
+                saveSharedData() {
+                    console.log("saveSharedData",Array.prototype.slice.call(arguments, 0));
+                    return 'saveSharedData 回调'
+                },
+                openChargeStore() {
+                    console.log("openChargeStore",Array.prototype.slice.call(arguments, 0));
+                    return 'openChargeStore 回调'
+                },
+                openMapDetail() {
+                    console.log("openMapDetail",Array.prototype.slice.call(arguments, 0));
+                    return 'openMapDetail 回调'
+                },
+                GetUrlAddAuthStr() {
+                    console.log("GetUrlAddAuthStr",Array.prototype.slice.call(arguments, 0));
+                    return JSON.stringify({
+                        id: 123,
+                        name: 'test'
+                    })
+                },
+                OpenRoomsByOwidAndUins() {
+                    console.log("OpenRoomsByOwidAndUins",Array.prototype.slice.call(arguments, 0));
+                    return 'OpenRoomsByOwidAndUins 回调'
+                },
+                OpenMiniWorksTheme() {
+                    console.log("OpenMiniWorksTheme",Array.prototype.slice.call(arguments, 0));
+                    return 'OpenMiniWorksTheme 回调'
+                }
+            }
+        }
+    </script>
     <script type="module" src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vconsole@3.4.0/dist/vconsole.min.js"></script>
 </head>

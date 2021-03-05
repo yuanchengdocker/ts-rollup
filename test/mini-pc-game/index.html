@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PC-JS-Bridge  测试</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        if(!window.GetUrlAddAuthStr) {
+            Object.assign(window, {
+                GetUrlAddAuthStr() {
+                    console.log("GetUrlAddAuthStr", Array.prototype.slice.call(arguments, 0));
+                    return JSON.stringify({
+                        id: 123,
+                        name: 'test'
+                    })
+                },
+                openMapDetail() {
+                    console.log("openMapDetail", Array.prototype.slice.call(arguments, 0));
+                    return 'openMapDetail 回调'
+                },
+                QQLoginCallBack() {
+                    console.log("QQLoginCallBack", Array.prototype.slice.call(arguments, 0));
+                    return 'QQLoginCallBack 回调'
+                },
+                QQLoginUnCallBack() {
+                    console.log("QQLoginUnCallBack", Array.prototype.slice.call(arguments, 0));
+                    return 'QQLoginUnCallBack 回调'
+                },
+                WeChatLoginCallBack() {
+                    console.log("WeChatLoginCallBack", Array.prototype.slice.call(arguments, 0));
+                    return 'WeChatLoginCallBack 回调'
+                },
+                WeChatLoginUnCallBack() {
+                    console.log("WeChatLoginUnCallBack", Array.prototype.slice.call(arguments, 0));
+                    return 'WeChatLoginUnCallBack 回调'
+                },
+                OpenRoomsByOwidAndUins() {
+                    console.log("OpenRoomsByOwidAndUins", Array.prototype.slice.call(arguments, 0));
+                    return 'OpenRoomsByOwidAndUins 回调'
+                }
+            })
+        }
+    </script>
     <script type="module" src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vconsole@3.4.0/dist/vconsole.min.js"></script>
 </head>

@@ -3,7 +3,7 @@ module.exports = {
   'no-await-in-loop': 'error',
 
   // specify the maximum cyclomatic complexity allowed in a program
-  complexity: ['warn', 10],
+  complexity: ['warn', 20],
 
   // require return statements to either always or never specify values
   'consistent-return': 'error',

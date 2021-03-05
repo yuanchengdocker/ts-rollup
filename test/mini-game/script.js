@@ -1,7 +1,5 @@
 import '../../src/index'
 var demo = document.getElementById('demo');
-console.log(mnw);
-console.log(window.location.href);
 mnw.initNativeShare(
   {
     platform: [
@@ -188,7 +186,7 @@ demo.onclick = function (e) {
     case 'closeWindow':
       (function () {
         console.log('关闭浏览器 click');
-        mnw.closeWindow();
+        mnw.closeWindow(function(result){console.log(result);});
       })();
       break;
     case 'showBar':

@@ -3,7 +3,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import commonJs from '@rollup/plugin-commonjs'
 import jsonP from '@rollup/plugin-json'
 import { terser } from 'rollup-plugin-terser'
-import { version } from './package.json'
+import { name, version } from './package.json'
 
 const plugins = [
   terser({ compress: { drop_console: true } }),
@@ -23,7 +23,7 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      file: `dist/miniwan@${version}.min.js.js`,
+      file: `dist/${name}@${version}.min.js.js`,
       format: 'umd'
     }
   ],

@@ -68,6 +68,7 @@ demo.onclick = function(e){
                         mapId:'40798043659590'
                     })
                 })();
+                break;
             case 'getUserAuthInfo':
                 (function(){
                     console.log('点击获取登录状态');
