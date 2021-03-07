@@ -6,7 +6,7 @@ function undefinedProxy(obj: any, title: string) {
   obj = new Proxy(obj, {
     get(target, key) {
       if (!target[key]) {
-        return (() => { console.log(title, `${String(key)}函数还未初始化！`) })
+        return (() => { console.warn(title, `${String(key)}函数还未初始化！`) })
       }
       return target[key]
     }

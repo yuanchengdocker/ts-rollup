@@ -3,9 +3,7 @@
   "version": "2.0.0",
   "description": "",
   "scripts": {
-    "dev:box": "vite serve test/mini-box",
-    "dev:game": "vite serve test/mini-game",
-    "dev:pc": "vite serve test/mini-pc-game",
+    "test": "vite serve test",
     "build": "rollup --config",
     "lint": "eslint --fix --ext .ts src"
   },
